@@ -1,7 +1,20 @@
 {
-    "name": "Flutter Localization",
+    "name": "",
     "hello_world": "Hello World",
     "example_text": "This is example of localization in flutter",
     "world_text": "This world is so beautiful",
-    "language": "Language"
+    "language": "Language",
+    "profile": "Profile",
+    "my_points": "My Points",
+    "my_orders": "My Orders",
+    "notifications": "Notifications",
+    "my_addresses": "My Addresses",
+    "about_saudi_plus": "About Saudi Plus",
+    "terms_and_conditions": "Terms and Conditions",
+    "usage_policy": "Usage Policy",
+    "technical_support": "Technical Support",
+    "contact_us": "Contact Us",
+    "logout": "Logout",
+    "arabic": "Arabic",
+    "english": "English"
 }

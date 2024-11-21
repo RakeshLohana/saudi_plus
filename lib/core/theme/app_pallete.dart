@@ -6,6 +6,7 @@ class AppPallete{
   static const whiteColor = Color(0XFFFFFFFF);
   static const black = Colors.black;
   static const shadowColor = Colors.black12;
+  static const redColor = Colors.red;
 
 
 }

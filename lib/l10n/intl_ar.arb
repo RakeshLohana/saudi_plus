@@ -1,7 +1,20 @@
 {
-    "name": "فلاتر لوكاليزيشن",
+     "name": "فلاتر لوكاليزيشن",
     "hello_world": "مرحبا بالعالم",
     "example_text": "هذا مثال على التوطين في الرفرفة",
     "world_text": "هذا العالم جميل جداً",
-    "language": "لغة"
+    "language": "لغة",
+    "profile": "الملف الشخصي",
+    "my_points": "نقاطي",
+    "my_orders": "طلباتي",
+    "notifications": "الإشعارات",
+    "my_addresses": "عناويني",
+    "about_saudi_plus": "عن سعودي بلس",
+    "terms_and_conditions": "الشروط و الأحكام",
+    "usage_policy": "سياسة الاستخدام",
+    "technical_support": "الدعم الفني",
+    "contact_us": "الاتصال بنا",
+    "logout": "تسجيل الخروج",
+    "arabic": "عربي",
+    "english": "English"
 }

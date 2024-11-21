@@ -1,7 +1,8 @@
 class MyAssets {
-  static String basePath = "assets/images";
+  static String basePath = "assets/Svgs";
   static String basePathIcon = "assets/icons";
-  static String basePathSvg = "assets/images";
+  static String basePathSvg = "assets/Svgs";
+  static String basePathPng="assets/Pngs";
 
 
   ///Icons
@@ -29,6 +30,9 @@ class MyAssets {
   static String drawerIcon12 = "${basePathSvg}/logout.svg";
 
 
+  static String drawerMenuIcon = "${basePathPng}/menu.png";
+
+
 
   ///TabBarIcons
   static String tabBarIcon3= "${basePathSvg}/map.svg";
@@ -38,5 +42,10 @@ class MyAssets {
 
 
 
+
+
+
+  ///AppNameIcon
+  static String appNameIcon = "${basePathSvg}/app_name.svg";
 
 }
