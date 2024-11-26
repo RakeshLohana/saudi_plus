@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:saudi_plus/core/constants/assets.dart';
-import 'package:saudi_plus/core/theme/app_pallete.dart';
+import 'package:saudi_plus/core/theme/app_color.dart';
 import 'package:saudi_plus/core/utils/custom_text.dart';
 import 'package:saudi_plus/core/utils/language_choose.dart';
+import 'package:saudi_plus/features/dashboard/presentation/bloc/main_dashboard_bloc.dart';
 import 'package:saudi_plus/l10n/app_local.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -67,12 +69,18 @@ class DrawerWidget extends StatelessWidget {
 
     ];
 
+    return BlocBuilder<MainDashboardBloc, MainDashboardState>(
+  builder: (context, state) {
+    bool isSelected = false;
+    if (state is LanguageColorChangeState) {
+      isSelected = state.selectedColor;
+    }
     return Drawer(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
         child: ListView(
           children:  [
-            Row(
+            const   Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CircleAvatar(
@@ -100,7 +108,7 @@ class DrawerWidget extends StatelessWidget {
                         CustomText(text: "ID:  M-646",
                           maxLines: 2,
                           fontSize: 12,
-                          color: AppPallete.black,
+                          color: AppColor.black,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
@@ -111,94 +119,105 @@ class DrawerWidget extends StatelessWidget {
               ],
             ),
             Gap(10),
-           Column(
-             children: [
-               ListView.separated(
-                 physics: BouncingScrollPhysics(),
-                 shrinkWrap: true,
-                   itemBuilder: (context, index) => ListTile(
-                     visualDensity: const VisualDensity(vertical: -3),
-                     trailing: drawerMap[index]["isWidget"]==1
-                         ?drawerMap[index]["trailing"]
-                         :Icon(drawerMap[index]["trailing"],size: 15,),
-                     leading: SvgPicture.asset(drawerMap[index]["leading"]),
-                     title: Text(drawerMap[index]["title"]),
-                   ),
-                   separatorBuilder: (context, index) => const Divider(),
-                   itemCount: drawerMap.length),
+            Column(
+              children: [
+                ListView.separated(
+                    physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => ListTile(
+                      visualDensity: const VisualDensity(vertical: -3),
+                      trailing: drawerMap[index]["isWidget"]==1
+                          ?drawerMap[index]["trailing"]
+                          :Icon(drawerMap[index]["trailing"],size: 15,),
+                      leading: SvgPicture.asset(drawerMap[index]["leading"]),
+                      title: Text(drawerMap[index]["title"]),
+                    ),
+                    separatorBuilder: (context, index) => const Divider(),
+                    itemCount: drawerMap.length),
 
-               Divider(),
+                Divider(),
 
-               Padding(
-                 padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 15),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     SvgPicture.asset(MyAssets.drawerIcon11),
-                     Text(AppLocal.loc.language),
-                     Row(
-                       children: [
-                         GestureDetector(
-                           onTap: () {
-                             LanguageChoose.chooseLanguage(context, "en");
-                           },
-                           child: Container(
-                             decoration: BoxDecoration(
-                                 color: AppPallete.primaryColor,
-                                 borderRadius: BorderRadius.circular(4)
-                             ),
-                             height: 25,
-                             width: 62,
-                             child: Center(
-                               child: CustomText(text: "English",),
-                             ),
-                           ),
-                         ),
-                         Gap(5),
-                         GestureDetector(
-                           onTap: () {
-                             LanguageChoose.chooseLanguage(context, "ar");
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SvgPicture.asset(MyAssets.drawerIcon11),
+                      Text(AppLocal.loc.language),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              LanguageChoose.chooseLanguage(context, "en");
+                              Navigator.pop(context);
+                              context.read<MainDashboardBloc>().add(LanguageColorChange(false));
 
-                           },
-                           child: Container(
-                             decoration: BoxDecoration(
-                                 color: AppPallete.primaryColor,
-                                 borderRadius: BorderRadius.circular(4)
-                             ),
-                             height: 25,
-                             width: 62,
-                             child: Center(
-                               child: CustomText(text: "Arbi",color: AppPallete.whiteColor,),
-                             ),
-                           ),
-                         ),
-                       ],
-                     )
-
-                   ],
-                 ),
-               ),
-               Divider(),
-
-               Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 8),
-                 child: Row(
-                   children: [
-                     SvgPicture.asset(MyAssets.drawerIcon12),
-                     Gap(16),
-                     CustomText(text:AppLocal.loc.logout,color: AppPallete.redColor,),
-                   ],
-                 ),
-               ),
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: isSelected ?AppColor.appPrimaryColor:AppColor.languageSelect,
+                                  borderRadius: BorderRadius.circular(4)
+                              ),
+                              height: 25,
+                              width: 62,
+                              child: Center(
+                                child: CustomText(text: "English",),
+                              ),
+                            ),
+                          ),
+                          Gap(5),
+                          GestureDetector(
+                            onTap: () {
+                              LanguageChoose.chooseLanguage(context, "ar");
+                              Navigator.pop(context);
+                              context.read<MainDashboardBloc>().add(LanguageColorChange(true));
 
 
 
-             ],
-           )
+
+
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: isSelected ?AppColor.appPrimaryColor:AppColor.languageSelect,
+                                  borderRadius: BorderRadius.circular(4)
+                              ),
+                              height: 25,
+                              width: 62,
+                              child: const Center(
+                                child: CustomText(text: "عربي",color: AppColor.whiteColor,),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+
+                    ],
+                  ),
+                ),
+                Divider(),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 8),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(MyAssets.drawerIcon12),
+                      Gap(16),
+                      CustomText(text:AppLocal.loc.logout,color: AppColor.redColor,),
+                    ],
+                  ),
+                ),
+
+
+
+              ],
+            )
 
           ],
         ),
       ),
     );
+  },
+);
   }
 }

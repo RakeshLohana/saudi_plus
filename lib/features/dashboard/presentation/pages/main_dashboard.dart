@@ -41,15 +41,18 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+        toolbarHeight: 80,
+
           leading: Builder(
             builder: (context) => GestureDetector(
               onTap: () => Scaffold.of(context).openDrawer(),
                 child: Container(
-                  height: 225,
+                  height: 235,
                   width: 225,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(MyAssets.drawerMenuIcon,
+
 
 
 
@@ -60,14 +63,14 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
           ),
 
           title: Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
                 SvgPicture.asset(
                   MyAssets.appNameIcon,
-                  height: 40,
+                  height: 50,
                 ),
                 // Text('App Name'),
               ],

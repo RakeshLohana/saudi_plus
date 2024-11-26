@@ -1,8 +1,4 @@
 {
-     "name": "فلاتر لوكاليزيشن",
-    "hello_world": "مرحبا بالعالم",
-    "example_text": "هذا مثال على التوطين في الرفرفة",
-    "world_text": "هذا العالم جميل جداً",
     "language": "لغة",
     "profile": "الملف الشخصي",
     "my_points": "نقاطي",
@@ -16,5 +12,22 @@
     "contact_us": "الاتصال بنا",
     "logout": "تسجيل الخروج",
     "arabic": "عربي",
-    "english": "English"
+     "english": "إنجليزي",
+     "search_for_offers": "بحث عن العروض",
+      "explore_sections": "إستكشاف الأقسام",
+      "car_services": "خدمات السيارات",
+      "shopping_stores": "محلات التسوق",
+      "health_services": "خدمات الصحة",
+      "beauty_care": "العناية بالجمال",
+      "restaurants_and_cafes": "مطاعم وكافيهات",
+      "travel_and_tourism": "سفر وسياحة",
+      "home": "الرئيسية",
+          "categories":"الفئات",
+          "scan":"مسح",
+          "map":"الخريطة",
+
+          "jeddah": "جدة",
+          "select_region": "اختر المنطقة",
+          "username": "أسم المستخدم",
+          "hello": "أهلاً بك"
 }

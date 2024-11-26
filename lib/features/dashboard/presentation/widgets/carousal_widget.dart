@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:saudi_plus/core/theme/app_pallete.dart';
+import 'package:saudi_plus/core/theme/app_color.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CarouselWithSmoothIndicator extends StatefulWidget {
@@ -26,14 +26,14 @@ class _CarouselWithSmoothIndicatorState
       mainAxisSize: MainAxisSize.min,
       children: [
         CarouselSlider(
-          items: carouselItems
-              .map(
+          items: carouselItems.map(
                 (url) => Container(
+                  height: MediaQuery.of(context).size.height * 0.22,
               margin: const EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(url),
-                  fit: BoxFit.cover, // Adjust the image fit
+                  fit: BoxFit.cover
                 ),
                 borderRadius: BorderRadius.circular(10), // Optional rounding
               ),
@@ -43,7 +43,7 @@ class _CarouselWithSmoothIndicatorState
           carouselController: _controller,
           options: CarouselOptions(
             padEnds: true,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.22,
             autoPlay: true,
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
@@ -61,7 +61,7 @@ class _CarouselWithSmoothIndicatorState
           effect: ExpandingDotsEffect(
             dotHeight: 6.0,
             dotWidth: 6.0,
-            activeDotColor: AppPallete.primaryColor,
+            activeDotColor: AppColor.appPrimaryColor,
             dotColor: Colors.grey,
             spacing: 4.0,
             expansionFactor: 3.0,

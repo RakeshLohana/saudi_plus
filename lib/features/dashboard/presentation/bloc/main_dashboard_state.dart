@@ -11,3 +11,9 @@ class TabChangedState extends MainDashboardState {
 
   TabChangedState(this.currentIndex);
 }
+
+class LanguageColorChangeState extends MainDashboardState {
+  final bool selectedColor;
+
+  LanguageColorChangeState(this.selectedColor);
+}

@@ -1,8 +1,4 @@
 {
-    "name": "",
-    "hello_world": "Hello World",
-    "example_text": "This is example of localization in flutter",
-    "world_text": "This world is so beautiful",
     "language": "Language",
     "profile": "Profile",
     "my_points": "My Points",
@@ -16,5 +12,22 @@
     "contact_us": "Contact Us",
     "logout": "Logout",
     "arabic": "Arabic",
-    "english": "English"
-}
+     "english": "English",
+    "search_for_offers": "Search for offers",
+    "explore_sections": "Explore Categories",
+    "car_services": "Car Services",
+    "shopping_stores": "Shopping Stores",
+    "health_services": "Health Services",
+    "beauty_care": "Beauty Care",
+    "restaurants_and_cafes": "Restaurants and Cafes",
+    "travel_and_tourism": "Travel and Tourism",
+    "home": "Home",
+    "categories":"Categories",
+    "scan":"Scan",
+    "map":"Map",
+        "jeddah": "Jeddah",
+        "select_region": "Select the region",
+        "username": "Username",
+        "hello": "Hello"
+
+    }

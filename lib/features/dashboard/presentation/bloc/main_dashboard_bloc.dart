@@ -10,5 +10,10 @@ class MainDashboardBloc extends Bloc<MainDashboardEvent, MainDashboardState> {
       emit(TabChangedState(event.index));
 
     });
+
+    on<LanguageColorChange>((event, emit) {
+      emit(LanguageColorChangeState(event.selectedColor));
+
+    });
   }
 }

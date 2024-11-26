@@ -36,9 +36,17 @@ class MyAssets {
 
   ///TabBarIcons
   static String tabBarIcon3= "${basePathSvg}/map.svg";
-  static String tabBarIcon2 = "${basePathSvg}/Property36.svg";
+  static String tabBarIcon3Selected= "${basePathSvg}/map_selected.svg";
+
+  static String tabBarIcon2 = "${basePathSvg}/categories.svg";
+  static String tabBarIcon2Selected = "${basePathSvg}/categories_selected.svg";
+
   static String tabBarIcon1= "${basePathSvg}/scan.svg";
-  static String tabBarIcon4 = "${basePathSvg}/Frame102.svg";
+  static String tabBarIcon1Selected= "${basePathSvg}/scan_selected.svg";
+
+
+  static String tabBarIcon4 = "${basePathSvg}/home.svg";
+  static String tabBarIcon4Selected = "${basePathSvg}/home_selected.svg";
 
 
 
@@ -47,5 +55,12 @@ class MyAssets {
 
   ///AppNameIcon
   static String appNameIcon = "${basePathSvg}/app_name.svg";
+  static String splash = "${basePathSvg}/splash.svg";
+
+
+  ///DashBoard Icons
+  static String location_select = "${basePathSvg}/location_select.svg";
+  static String search_icon = "${basePathSvg}/search_icon.svg";
+
 
 }
