@@ -4,5 +4,6 @@ abstract class RouteStrings {
   static const registerScreen = '/registerScreen';
   static const forgetPasswordScreen = '/forgetPasswordScreen';
   static const mainDashboardScreen = '/mainDashboardScreen';
+  static const locationPermissionScreen = '/locationPermissionScreen';
 
 }

@@ -5,7 +5,8 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:saudi_plus/core/constants/route_strings.dart';
 import 'package:saudi_plus/core/utils/navigation_animation.dart';
 import 'package:saudi_plus/features/dashboard/presentation/pages/main_dashboard.dart';
-import 'package:saudi_plus/features/dashboard/presentation/pages/splash_screen.dart';
+import 'package:saudi_plus/features/splash/presentation/pages/location_permission_screen.dart';
+import 'package:saudi_plus/features/splash/presentation/pages/splash_screen.dart';
 
 
 class RouteGenerator {
@@ -17,6 +18,8 @@ class RouteGenerator {
         return SwipeLeftAnimationRoute(widget: const ResponsiveWrap(child: SplashScreen()));
       case RouteStrings.mainDashboardScreen:
         return SwipeLeftAnimationRoute(widget: const ResponsiveWrap(child: MainDashboardScreen()));
+      case RouteStrings.locationPermissionScreen:
+        return SwipeLeftAnimationRoute(widget: const ResponsiveWrap(child: LocationPermissionScreen()));
 
 
       default:

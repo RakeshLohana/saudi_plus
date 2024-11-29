@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
               ]),
               navigatorKey: AppUtility.navigatorKey,
               onGenerateRoute: RouteGenerator.generateRoute,
-              initialRoute: RouteStrings.splash,
+              initialRoute: RouteStrings.locationPermissionScreen,
 
 
               theme: ThemeData(

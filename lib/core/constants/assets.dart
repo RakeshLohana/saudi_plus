@@ -63,4 +63,10 @@ class MyAssets {
   static String search_icon = "${basePathSvg}/search_icon.svg";
 
 
+
+  ///location_permission
+  static String location_permission = "${basePathSvg}/location_select.svg";
+
+
+
 }
