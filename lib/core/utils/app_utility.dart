@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 import 'dart:io';
 
@@ -518,7 +520,7 @@ abstract class AppUtility {
   }
   static String? validateField(BuildContext context,dynamic value,String type) {
     if (value == null || value.isEmpty) {
-      return "${type} is empty";
+      return "$type is empty";
     }
 
     return null;
@@ -622,6 +624,7 @@ abstract class AppUtility {
       //   return "Invalid National ID. Ensure the ID matches the correct format.";
       // }
     }
+    return null;
   }
 
   static String? validateEmail(BuildContext context,dynamic value) {
@@ -894,7 +897,7 @@ abstract class AppUtility {
                       children: [
                         TextButton(
                             onPressed: () => Navigator.pop(context),
-                            child: Text("cancel")),
+                            child: const Text("cancel")),
                         TextButton(
                             onPressed: () async {
                               Future.microtask(() => Navigator.popAndPushNamed(context, RouteStrings.loginScreen));
@@ -906,7 +909,7 @@ abstract class AppUtility {
                               //             const LoginView()),
                               //             (route) => route.isCurrent));
                             },
-                            child: Text(AppString.ok)),
+                            child: const Text(AppString.ok)),
                       ],
                     ),
                   ],

@@ -17,13 +17,13 @@ class AppColor{
   static const textBodyColor = Color(0xFF030319);
   static const errorBorderColor = Colors.red;
   static const Color green = Colors.green;
-  static Color yellow = Color(0xffFFB038);
-  static Color blue = Color(0xff384CFF);
-  static Color purple = Color(0xff543681);
-  static Color greenLight = Color(0xff4AC76D);
+  static Color yellow = const Color(0xffFFB038);
+  static Color blue = const Color(0xff384CFF);
+  static Color purple = const Color(0xff543681);
+  static Color greenLight = const Color(0xff4AC76D);
   static Color grey = Colors.grey;
-  static Color bottomLabel  = Color(0xff4DB8A6);
-  static Color languageSelect  = Color(0xffF5F5F5);
+  static Color bottomLabel  = const Color(0xff4DB8A6);
+  static Color languageSelect  = const Color(0xffF5F5F5);
 
 
 

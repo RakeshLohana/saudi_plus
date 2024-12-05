@@ -1,19 +1,17 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:saudi_plus/core/constants/assets.dart';
 import 'package:saudi_plus/features/dashboard/presentation/bloc/main_dashboard_bloc.dart';
 import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/categories_widget.dart';
 import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/map_widget.dart';
 import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/scan_widget.dart';
 import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom_navigation.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/carousal_widget.dart';
+
 import 'package:saudi_plus/features/dashboard/presentation/widgets/drawer_widget.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/grid_widget.dart';
+
 import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/home_widget.dart';
 
 class MainDashboardScreen extends StatefulWidget {

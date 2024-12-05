@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:saudi_plus/core/common%20widgets/common_button.dart';
 import 'package:saudi_plus/core/constants/assets.dart';
+import 'package:saudi_plus/core/constants/route_strings.dart';
+import 'package:saudi_plus/core/services/shared_preferences.dart';
 import 'package:saudi_plus/core/theme/app_color.dart';
 import 'package:saudi_plus/core/utils/custom_text.dart';
 import 'package:saudi_plus/l10n/app_local.dart';
@@ -13,6 +16,7 @@ class LocationPermissionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppLocal.init(context);
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(13.0),
@@ -68,18 +72,38 @@ class LocationPermissionScreen extends StatelessWidget {
                       borderRadius: 12,
 
                       elevation: 0,
-                      onPressed: () {
+                      onPressed: () async {
+                        // Add onPressed logic here
+                        const permission = Permission.location;
+                        if(await PreferencesService.getLocationPermission()) {
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              RouteStrings.loginScreen, (route) => false);
+                        }
+                        else{
+                          await permission.request();
+                          if(await permission.isGranted){
+                            await PreferencesService.setLocationPermission(true);
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                RouteStrings.loginScreen, (route) => false);
+                          }
+                        }
                       },
                     ),
                   ),
-                  CustomText(
-                    text: AppLocal.loc.skip,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: AppColor.borderColor,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          RouteStrings.loginScreen, (route) => false);
+                    },
+                    child: CustomText(
+                      text: AppLocal.loc.skip,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.borderColor,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
 
+                    ),
                   ),
                   const Gap(10),
 

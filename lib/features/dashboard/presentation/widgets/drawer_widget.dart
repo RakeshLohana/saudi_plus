@@ -25,7 +25,7 @@ class DrawerWidget extends StatelessWidget {
     List<Map<String,dynamic>> drawerMap=[
       {"leading":MyAssets.drawerIcon1, "title":AppLocal.loc.profile, "trailing":Icons.arrow_forward_ios, },
 
-      {"leading":MyAssets.drawerIcon2, "title":AppLocal.loc.my_points, "trailing":Container(child: Text("250"),),"isWidget":1},
+      {"leading":MyAssets.drawerIcon2, "title":AppLocal.loc.my_points, "trailing":Container(child: const Text("250"),),"isWidget":1},
       {"leading":MyAssets.drawerIcon3, "title":AppLocal.loc.my_orders, "trailing":Icons.arrow_forward_ios,},
       {"leading":MyAssets.drawerIcon4, "title":AppLocal.loc.notifications, "trailing":Icons.arrow_forward_ios,},
       {"leading":MyAssets.drawerIcon5, "title":AppLocal.loc.my_addresses, "trailing":Icons.arrow_forward_ios,},
@@ -118,11 +118,11 @@ class DrawerWidget extends StatelessWidget {
 
               ],
             ),
-            Gap(10),
+            const Gap(10),
             Column(
               children: [
                 ListView.separated(
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context, index) => ListTile(
                       visualDensity: const VisualDensity(vertical: -3),
@@ -135,7 +135,7 @@ class DrawerWidget extends StatelessWidget {
                     separatorBuilder: (context, index) => const Divider(),
                     itemCount: drawerMap.length),
 
-                Divider(),
+                const Divider(),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 15),
@@ -151,31 +151,6 @@ class DrawerWidget extends StatelessWidget {
                               LanguageChoose.chooseLanguage(context, "en");
                               Navigator.pop(context);
                               context.read<MainDashboardBloc>().add(LanguageColorChange(false));
-
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: isSelected ?AppColor.appPrimaryColor:AppColor.languageSelect,
-                                  borderRadius: BorderRadius.circular(4)
-                              ),
-                              height: 25,
-                              width: 62,
-                              child: Center(
-                                child: CustomText(text: "English",),
-                              ),
-                            ),
-                          ),
-                          Gap(5),
-                          GestureDetector(
-                            onTap: () {
-                              LanguageChoose.chooseLanguage(context, "ar");
-                              Navigator.pop(context);
-                              context.read<MainDashboardBloc>().add(LanguageColorChange(true));
-
-
-
-
-
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -185,7 +160,26 @@ class DrawerWidget extends StatelessWidget {
                               height: 25,
                               width: 62,
                               child: const Center(
-                                child: CustomText(text: "عربي",color: AppColor.whiteColor,),
+                                child: CustomText(text: "English",),
+                              ),
+                            ),
+                          ),
+                          const Gap(5),
+                          GestureDetector(
+                            onTap: () {
+                              LanguageChoose.chooseLanguage(context, "ar");
+                              Navigator.pop(context);
+                              context.read<MainDashboardBloc>().add(LanguageColorChange(true));
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: isSelected ? AppColor.appPrimaryColor:AppColor.languageSelect,
+                                  borderRadius: BorderRadius.circular(4)
+                              ),
+                              height: 25,
+                              width: 62,
+                              child: const Center(
+                                child: CustomText(text: "عربي"),
                               ),
                             ),
                           ),
@@ -195,14 +189,14 @@ class DrawerWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(),
+                const Divider(),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 8),
                   child: Row(
                     children: [
                       SvgPicture.asset(MyAssets.drawerIcon12),
-                      Gap(16),
+                      const Gap(16),
                       CustomText(text:AppLocal.loc.logout,color: AppColor.redColor,),
                     ],
                   ),

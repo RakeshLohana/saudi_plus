@@ -12,7 +12,7 @@ class MyToast{
       type: type,
       style: ToastificationStyle.flat,
       autoCloseDuration: const Duration(seconds: 5),
-      title: Text(message,style: TextStyle(color: AppColor.black),),
+      title: Text(message,style: const TextStyle(color: AppColor.black),),
       // you can also use RichText widget for title and description parameters
       description: RichText(text:  TextSpan(text: description,style: TextStyle(color: AppColor.grey),),),
       alignment: Alignment.topRight,

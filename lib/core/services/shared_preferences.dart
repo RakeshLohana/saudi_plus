@@ -15,4 +15,15 @@ class PreferencesService {
     final languageCode = prefs.getString(_languageKey) ?? 'en';
     return Locale (languageCode);
   }
+
+  static Future setLocationPermission(bool status) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('locationPermission', status );
+  }
+
+  static Future<bool> getLocationPermission() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('locationPermission') ?? false;
+ }
+
 }

@@ -4,10 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saudi_plus/core/constants/assets.dart';
 import 'package:saudi_plus/core/theme/app_color.dart';
 import 'package:saudi_plus/features/dashboard/presentation/bloc/main_dashboard_bloc.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/categories_widget.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/home_widget.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/map_widget.dart';
-import 'package:saudi_plus/features/dashboard/presentation/widgets/bottom%20navigation%20widgets/scan_widget.dart';
 import 'package:saudi_plus/l10n/app_local.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {

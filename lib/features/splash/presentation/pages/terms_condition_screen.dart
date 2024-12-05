@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:saudi_plus/core/utils/custom_text.dart';
 import 'package:saudi_plus/l10n/app_local.dart';
+
+import '../../../../core/theme/app_color.dart';
 
 class TermsConditionScreen extends StatelessWidget {
   const TermsConditionScreen({super.key});
@@ -12,7 +15,7 @@ class TermsConditionScreen extends StatelessWidget {
     List<Map<String, dynamic>> termsList=[
 
       {
-        "title":AppLocal.loc.condition_1
+        // "title":AppLocal.loc.condition_1
       }
 
     ];
